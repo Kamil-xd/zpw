@@ -1,0 +1,8 @@
+repository – folder z projektem
+GitHub/GitLab/Bitbucket – strony gdzie trzymasz projekt 
+git – program do ogarniania zmian w projekcie
+commit – zapisanie zmian
+branch – osobna wersja projektu do pracy
+checkout – zmiana brancha
+merge – połączenie dwóch branchy
+rebase – przeniesienie zmian na nowszą wersję brancha
