@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <script>
+        // $(document).ready(function(){
+        //     console.log("dziala")
+        // });
+let $licznik = 0
+        $(function(){
+            $("#kwadrat").click(function(){
+                $("#kwadrat").css("background-color", "red")
+                
+                $licznik++
+                $("#K").text($licznik)
+            })
+            $("button").click(function(){
+                $("#komunikat").text("czesc")
+
+            })
+
+            $("#reset").click(function(){
+                $("#kwadrat").css("background-color", "lightgray")
+                $("#komunikat").text("")
+
+            })
+        })
+    </script>
+    <style>
+    #kwadrat { width: 150px; height: 150px; background: lightgray; }
+  </style>
+</head>
+<body>
+    <button id="przywitaj">Przywitaj się</button>
+    <button id="reset">reset</button>
+    <p id="komunikat"></p>
+    <p id="K"></p>
+    <div id="kwadrat"></div>
+</body>
+</html>
