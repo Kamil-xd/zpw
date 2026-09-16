@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <script>
+        $(function(){
+            $("#naKoniec").click(function(){
+                let $zmienna = $("#produkt").val()
+                if ($zmienna.lenght > 0){
+                    $("ul").append("<li>"+$zmienna+"</li>");
+                    $("li").last().css("color", "blue")
+                }
+            })
+
+            $("#naPoczatek").click(function(){
+                let $zmienna = $("#produkt").val()
+                if ($zmienna.lenght > 0){
+                    $("ul").prepend("<li>"+$zmienna+"</li>");
+                    $("li").first().css({
+                        "color":"red",
+                        "font-weight": "bold"
+                    })
+            }
+            })
+
+
+            $("#accept").click(function(){
+                if(this.checked){
+                    $("#send").removeAttr("disabled")
+                }else{
+                    $("#send").attr("disabled", "disabled")
+                }
+                
+            })
+        })
+    </script>
+</head>
+<body>
+    <ul id="lista">
+        <li>Chleb</li>
+        <li>Mleko</li>
+    </ul>
+    <input type="text" id="produkt" placeholder="Nazwa produktu">
+    <button id="naKoniec">Dodaj na koniec</button>
+    <button id="naPoczatek">Dodaj na początek</button>
+
+    <input type="checkbox" id="accept">
+    <label for="accept">czy akceptujesz</label>
+    <button id="send" disabled>wyslij</button>
+</body>
+</html>
