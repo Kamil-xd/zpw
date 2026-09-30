@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+    <title>Lista Gier Komputerowych</title>
+    <script>
+        // $(document).on("keypress keyup keydown", function(event){
+        //     $("#eventType").text(event.type)
+        // })
+        // $(document).on("mousemove", function(event){
+        //     $("#pageX").text(event.pageX)
+        //     $("#pagey").text(event.pageY)
+        // })
+        $(function(){
+            let japko = $(".japko")
+
+            japko.css({
+                "margin-left":Math.floor((Math.random()*500)+ 1),
+                "margin-top":Math.floor((Math.random()*500)+ 1)
+            })
+        })
+        $(document).on("keypress", function(event){
+            if(event.key == "d"){
+                $(".kwadrat").css("margin-left", "+=10")
+            }
+            if(event.key == "a"){
+                $(".kwadrat").css("margin-left", "-=10")
+            }
+            if(event.key == "s"){
+                $(".kwadrat").css("margin-top", "+=10")
+            }
+            if(event.key == "w"){
+                $(".kwadrat").css("margin-top", "-=10")
+            }
+
+        
+        })
+
+    </script>
+    <style>
+        .kwadrat{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: absolute;
+        }
+        .japko{
+            width: 20px;
+            height: 20px;
+            background-color: green;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>    
+    <div class="japko"></div>
+    <div class="kwadrat"></div>
+
+    <!-- <input type="text" id="pole">
+
+    <p>typ zdarzenia:
+        <span id="eventType">---</span>
+    </p>
+    <p>
+        pozycja myszy:
+        X = <span id="pageX">---</span>
+        Y = <span id="pagey">---</span>
+    </p> -->
+</body>
+</html>
