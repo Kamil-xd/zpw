@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+    <title>Animacje</title>
+    <script>
+        $(function(){
+            $("#ukryj").click(function(){
+                $("#ukryj").hide()
+            })
+            
+
+            $("#schowaj").click(function(){
+                $("#kot").hide(2000)
+            })
+
+            $("#pokaz").click(function(){
+                $("#sekret").show()
+            })
+
+            $("#zapisz").click(function(){
+                $("#dzieki").show(1000)
+            })
+
+            $("#przelacz").click(function(){
+                $("#opis").toggle()
+            })
+
+            $("#but1").click(function(){
+                $("#label").toggle()
+            })
+
+            $("#but2").click(function(){
+                $("#cos").slideUp()
+            })
+
+            $("#but3").click(function(){
+                $("#cos1").slideDown()
+            })
+
+            $("#but4").click(function(){
+                $("#cos2").slideToggle()
+            })
+        })
+
+    </script>
+    <style>
+
+    </style>
+</head>
+<body>    
+    <p id="text">kliknj a znikne</p>
+    <button id="ukryj">ukryj</button><br>
+    <img id="kot" src="image.png"><br>
+    <button id="schowaj">schowaj kota</button><br>
+    <p id="sekret" style="display: none;">tajne info</p>
+    <button id="pokaz">pokaz</button><br>
+    <p id="dzieki" style="display: none;">dziekujemy za zapisanie sie</p><br>
+    <button id="zapisz">zapisz sie</button><br>
+    <p id="opis">opisz produkt</p><br>
+    <button id="przelacz">pokaz/ukryj</button><br>
+    <input type="password" id="haslo"><br>
+    <label id="label">haslo musi miec min 8 zankow</label>
+    <button id="but1">?</button>
+    <p id="cos">cos</p>
+    <button id="but2">but</button>
+
+    <p id="cos1">cos1</p>
+    <button id="but3">but3</button>
+
+    <p id="cos2">cos2</p>
+    <button id="but4">but4</button>
+</body>
+</html>
