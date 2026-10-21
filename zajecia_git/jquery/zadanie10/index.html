@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+    <title>Animacje</title>
+    <script>
+        $(function(){
+            $("#newsletter").change(function(){
+                if($(this).is(":checked")){
+                    $("#but").removeAttr("disabled")
+                }else{
+                    $("#but").attr("disabled" , "disabled")
+                }
+            })
+
+            const max = 100
+
+            $("#taxtarea").on('input', function(){
+                const pozostalo = max - $(this).val().length
+                $("#pozostalo").text(pozostalo).toggleClass("czerwony", pozostalo < 10)
+            })
+        })
+
+    </script>
+    <style>
+        #pozostalo{color: black;}
+        #pozostalo.czerwony{color: red;}
+    </style>
+</head>
+<body>    
+    <input type="checkbox" id="newsletter">chce newsletter
+    <p id="stan"></p>
+    <button disabled id="but">zarejestruj</button>
+    <hr>
+    <textarea id="textarea" maxlength="100" rows="4" cols="40"></textarea>
+    <p id="pozostalo"></p>
+</body>
+</html>
