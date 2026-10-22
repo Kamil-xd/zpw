@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+    <title>Animacje</title>
+    <script>
+        $(function(){
+            $("#sprawdz").click(function(){
+                let name = $("#imie").val().trim()
+
+                if(name == ""){
+                    $("#blad").text("pole jest wymagane")
+                }else{
+                    $("#blad").text("twoje imie: "+name)
+                }
+            })
+
+            $("#spr").click(function(){
+                event.preventDefault()
+                let sur = $("#nazwisko").val().trim()
+
+                if(sur == ""){
+                    $("#xd").text("pole jest wymagane").css("color", "red")
+                }else{
+                    $("#xd").text("twoje nazwisko: "+sur).css("color", "green")
+                }
+            })
+
+            $("#spr2").click(function(){
+                let age = Number($("#wiek").val().trim())
+
+                if(isNaN(age) && age<0){
+                    $("#xdd").text("wiek musi byc liczba").css("color", "red")
+                }else{
+                    $("#xdd").text("twoj wiek: "+age).css("color", "green")
+                }
+            })
+            $("#spr3").click(function(){
+                let mark = $("#ocena").val().trim()
+
+                if(isNaN(mark) && mark>0 && mark<7){
+                    $("#xddd").text("ocena musi byc liczba w zakresie 1-6").css("color", "red")
+                }else{
+                    $("#xddd").text("twoja ocena: "+mark).css("color", "green")
+                }
+            })
+        })
+
+    </script>
+    <style>
+
+    </style>
+</head>
+<body>    
+    <input type="text" id="imie">
+    <button id="sprawdz">sprawdz</button>
+    <p id="blad"></p>
+    <hr>
+    <form>
+        <input type="text" id="nazwisko">
+        <button id="spr">sprawdz</button>
+    </form>
+    <p id="xd"></p>
+    <hr>
+    <input type="text" id="wiek">
+    <button id="spr2">sprawdz</button>
+    <p id="xdd"></p>
+    <hr>
+    <input type="text" id="ocena">
+    <button id="spr3">sprawdz</button>
+    <p id="xddd"></p>
+</body>
+</html>
